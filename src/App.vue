@@ -1,33 +1,40 @@
 <template>
 <div id="app">
-    <header>
-      <Navbar/>
-    </header>
-      <Sidebar msg=""/>
-      <div class="content">
-        <h2>H2 content</h2>
+      <Header/>
+      <div class="main">
+        <Sidebar/>
+        <Content/>
       </div>
 </div>
 </template>
 
 <script>
 import Sidebar from './components/Sidebar.vue'
-import Navbar from './components/Navbar.vue'
+import Header from './components/Header.vue'
+import Content from './components/Content.vue'
 
 export default {
   name: 'app',
   components: {
     Sidebar,
-    Navbar
+    Header,
+    Content
   }
 }
 </script>
 
 <style>
 body {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
-  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
   background-color:#fff;
 }
-
+#app {
+  padding-top: 60px;
+}
+.main {
+  position: static;
+  z-index: 1;
+  padding: 0 30px 30px 270px;
+}
 </style>
