@@ -3,9 +3,12 @@
     <span class="logo">Logo</span>
     <nav>
         <ul>
-            <li v-for="item in items" v-bind:key="item.id">
+            <router-link
+                v-for="item in items"
+                v-bind:key="item.id"
+                :to="item.url">
                 {{item.title}}
-            </li>
+            </router-link>
         </ul>
     </nav>
     </div>
@@ -16,8 +19,8 @@ export default {
     data() {
         return {
             items: [
-                {id: 1, title: 'Log in'},
-                {id: 2, title: 'Sign in'}]
+                {id: 1, title: 'Log in', url: '/login'},
+                {id: 2, title: 'Register', url: '/register'}]
         }
     },
 }
@@ -58,8 +61,7 @@ ul {
     margin: 0;
 }
 
-li {
-    list-style-type: none;
+nav a {
     padding: 0 5px;
 }
 
